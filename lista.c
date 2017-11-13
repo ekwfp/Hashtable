@@ -194,23 +194,16 @@ void lista_destruir(lista_t *lista, void destruir_dato(void *)){
 }
 
 void lista_destruir_hash(lista_t *lista, void* hash, void destruir_dato(void *, void*)){
-	
 	void* acceso_dato;
 	while (!lista_esta_vacia(lista)){
-		
-		
 		acceso_dato = lista_borrar_primero(lista);
 		if (destruir_dato != NULL) destruir_dato(acceso_dato,hash);
 	/*	acceso_dato = (nodo_hash_t*)lista_borrar_primero(lista);
 		free(acceso_dato->clave);
 		if (hash->func_destruct != NULL) hash->func_destruct(acceso_dato->dato);
 		free(acceso_dato);*/
-			
 	}
-
 	free (lista);
-	
-	
 }
 
 
